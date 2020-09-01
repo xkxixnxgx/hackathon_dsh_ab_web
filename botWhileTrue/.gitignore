@@ -1,3 +1,4 @@
 env_bot
 .idea
 __pycache__
+settings.py

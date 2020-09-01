@@ -1,6 +1,6 @@
 # модуль для шифрования и дешифровки json при общении с базой данных
 import rsa
-from webbapp_for_operator.settings import pubkey_pem, privkey_pem
+from settings import pubkey_pem, privkey_pem
 
 
 pubkey = rsa.PublicKey.load_pkcs1(pubkey_pem, 'PEM')

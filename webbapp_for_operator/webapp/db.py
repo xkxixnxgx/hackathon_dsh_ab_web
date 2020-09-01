@@ -1,5 +1,5 @@
 from flask_pymongo import MongoClient
-from webbapp_for_operator.settings import CONNECTION_STRING
+from settings import CONNECTION_STRING
 
 
 client = MongoClient(CONNECTION_STRING)
