@@ -2,3 +2,4 @@
 __pycache__
 webbapp_for_operator/env_webapp
 botWhileTrue/env_bot
+webbapp_for_operator/settings.py
