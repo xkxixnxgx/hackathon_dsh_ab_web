@@ -1,16 +1,14 @@
 import telebot
 from telebot import types # pytelegrambotapi
 from random import choice
+from botWhileTrue.settings import token
 
 import menu
 import questions
 import user
 import mongo
 
-# token = '1208274828:AAHEqmnQDAPGa-16ibojQI9LtC_eIWfptws'
-token = '1340902997:AAH0MDN5eLDNbi74QRRaooM9gojRGEuZMds'
 
-# bot = telebot.TeleBot(token, num_threads=8)
 bot = telebot.AsyncTeleBot(token)
 
 print("Bot has been started")

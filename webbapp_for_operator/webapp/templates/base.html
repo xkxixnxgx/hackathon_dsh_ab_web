@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-ti=fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>{{ page_title }}</title>
+    </head>
+    <body>
+        <br>
+        <br>
+        <br>
+        <br>
+        {% include 'includes/_navbar.html' %}       
+        <div class='container'>
+            {% include 'includes/_messages.html' %}
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-10">
+                   {% block content %}{% endblock %}
+                </div>
+            </div>
+    </body>
+</html>
+
+

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if id_client %}
+        <form action="{{ url_for('user.request_client') }}" method="POST">
+            <div class="container">
+                <h2>
+                <p class="text-center">Информация по заявке</p>
+                </h2>
+                    <div class="row">
+                        <div class="col">
+                        </div>
+                        <div class="col-8">
+                            <div class="form-group">
+                                {{ form.id.label }}
+                            <input class="form-control" type="text" value="{{ request_list._id }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                {{ form.username.label }}
+                                <input class="form-control" type="text" value="{{ request_list.username }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                {{ form.service.label }}
+                                <input class="form-control" type="text" value="{{ request_list.service }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                {{ form.proposal.label }}
+                                <input class="form-control" type="text" value="{{ request_list.proposal }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                {{ form.status.label }}
+                                <input class="form-control" type="text" value="{{ request_list.status }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                {{ form.chat_id.label }}
+                                <input class="form-control" type="text" value="{{ request_list.chat_id }}" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                {{ form.full_name.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['full_name'] }}">
+                            </div>
+                            <div class="form-group">
+                                {{ form.birthdate.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['birthdate'] }}">
+                            </div>
+                            <div class="form-group">
+                                {{ form.birthplace.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['birthplace'] }}">
+                            </div>
+                            <div class="form-group">
+                                {{ form.passport_number.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['passport_number'] }}">
+                            </div>
+                            <div class="form-group">
+                                {{ form.department_code.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['department_code'] }}">
+                            </div>
+                            <div class="form-group">
+                                {{ form.date_of_issue.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['date_of_issue'] }}">
+                            </div>
+                            <div class="form-group">
+                                {{ form.issued_by.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['issued_by'] }}">
+                            </div>
+                            <div class="form-group">
+                                {{ form.address.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['address'] }}">
+                            </div>
+                            <div class="form-group">
+                                {{ form.actual_address.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['actual_address'] }}">
+                            </div>
+                            <div class="form-group">
+                                {{ form.i_c.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['i_c'] }}">
+                            </div>
+                            <div class="form-group">
+                                {{ form.phone_number.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['phone_number'] }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                {{ form.email.label }}
+                                <input class="form-control" type="text" value="{{ request_list.data['email'] }}" readonly>
+                            </div>
+                <br>
+                <br>
+                            <a class="btn btn-outline-secondary" href="?status_request=unchanged">Без изменений</a>
+                            <a class="btn btn-outline-warning" href="?status_request=update">Обновить</a>
+                            <a class="btn btn-outline-success" href="?status_request=done">Одобрить</a>
+                            <a class="btn btn-outline-danger" type="submit" href="?status_request=refused">Отклонить</a>
+                        </div>
+                        <div class="col">
+                        </div>
+                        <div class="row">
+                        </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </form>
+    {% else %}
+        <h1>Error. Request is not.</h1>
+    {% endif %}
+{% endblock %}

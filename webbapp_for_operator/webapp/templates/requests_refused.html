@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{{ url_for('user.requests')}}" method="GET">
+    <br>
+    <div class="container">
+        <h4>Заявки на банковские продукты</h4>
+        <br>
+        <div class="col-md-left">
+        <h6>Фильтр заявок:</h6>
+        <a class="btn btn-outline-secondary" href="/requests" role="button">Все</a>
+        <a class="btn btn-outline-warning" href="/requests/considers" role="button">В обработке</a>
+        <a class="btn btn-outline-success" href="/requests/done" role="button">Одобрено</a>
+        <a class="btn btn-outline-danger" href="/requests/refused" role="button">Отказано</a>
+        </div>
+        <br>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col-md-left">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID заявки</th>
+                        <th scope="col">Продукт</th>
+                        <th scope="col">Тип продукта</th>
+                        <th scope="col">ФИО</th>
+                        <th scope="col">Паспортные данные</th>
+                        <th scope="col">Связь с клиентом</th>
+                        <th scope="col">Телефон</th>
+                        <th scope="col">Статус заявки</th>
+                        <th scope="col">Подробнее</th>
+                    </tr>
+                    </thead>
+                    {% for request in request_list %}
+                    <tbody>
+                        <tr>
+                        <th scope="row">{{ request._id }}</th>
+                        <td>{{ request.service }}</td>
+                        <td>{{ request.proposal }}</td>
+                        <td>{{ request.data['full_name'] }}</td>
+                        <td>{{ request.data['passport_number'] }}</td>
+                        <td><a href="https://t.me/{{ request.username }}" class="text-decoration-none">телеграмм</a></td>
+                        <td>{{ request.data['phone_number'] }}</td>
+                        <td>{{ request.status }}</td>
+                        <td><a href="/request_client/{{request._id}}" class="text-decoration-none">Детально</a></td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+    </div>
+</form>
+{% endblock content %}

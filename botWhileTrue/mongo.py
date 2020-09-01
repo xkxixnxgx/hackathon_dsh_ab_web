@@ -1,8 +1,9 @@
 from pymongo import MongoClient
 import crypto
+from botWhileTrue.settings import CONNECTION_STRING
 
 # Mongo
-db_link = "mongodb+srv://user1:mb_test12345@cluster0.tmwn7.mongodb.net/mb_test?retryWrites=true&w=majority"
+db_link = CONNECTION_STRING
 client = MongoClient(db_link)
 
 # База данных
