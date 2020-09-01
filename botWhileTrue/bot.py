@@ -7,8 +7,8 @@ import questions
 import user
 import mongo
 
-# token = '1208274828:AAHEqmnQDAPGa-16ibojQI9LtC_eIWfptws'
-token = '1340902997:AAH0MDN5eLDNbi74QRRaooM9gojRGEuZMds'
+
+token = '1293518313:AAET6K3HObbgrZT_gt2-EAVxqyqoMr2XfQg'
 
 # bot = telebot.TeleBot(token, num_threads=8)
 bot = telebot.AsyncTeleBot(token)
