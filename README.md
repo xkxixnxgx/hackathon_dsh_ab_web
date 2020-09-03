@@ -38,6 +38,8 @@ $ git clone https://github.com/xkxixnxgx/requests_for_bank_products.git
 
 ## 2. <a name="webbapp">Установка и запуск веб-приложения</a> 
 
+#### Приложение работает на python 3.8.
+
 #### Перейдите в каталог `/webbapp_for_operator`. Установите виртуальное окружение в каталоге проекта и активируйте его:
 
 ```
@@ -79,7 +81,7 @@ http://127.0.0.1:5000/requests
 #### Перейдите в каталог `/botWhileTrue`. Установите виртуальное окружение в каталоге проекта и активируйте его:
 
 ```
-$ puthon -m venv env_bot
+$ python -m venv env_bot
 $ source env_bot/bin/activate
 ```
 
